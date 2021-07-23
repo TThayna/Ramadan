@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;;
+}
+
+section{
+
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding:100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 21px 36px;
+    margin-left: 65px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+header .logo{
+
+    position: relative;
+    color: #ff5e8e;
+    display: inline-block;
+    font-size: 2em;
+    text-decoration: none;
+    font-weight: 800;
+    margin-right: 401px;
+    opacity: 0;
+    animation: slide_left 0.5s linear forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes slide_left{
+    
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+header ul{
+
+    position: relative;
+    display: flex;
+    /* margin-right: -115px; */
+}
+
+header ul li{
+
+    list-style: none;
+}
+
+header ul li a{
+
+    display: inline-block;
+    color: #0169b2;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-left: 10px;
+    display: inline-block;
+    padding: 8px 18px;
+    text-decoration: none;
+    user-select: none;
+    opacity: 0;
+    animation: slide_top 0.5s linear forwards;
+    animation-delay: calc(0.2s * var(--i));
+    
+}
+
+@keyframes slide_top{
+
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100%{
+
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+/* necessário o active estar "colado" no (a) para poder o efeito funcionar */
+header ul li a.active,
+header ul li a:hover{ 
+
+    background-color: #0169b2;
+    color: #fff;
+    border-radius: 30px;
+}
+
+.content{
+    position: relative;   
+    margin-top: 60px; 
+}
+
+.content .textBox{
+
+    position: relative;
+    max-width: 550px;
+
+}
+
+.content .textBox h2{
+
+    color: #0169b2;
+    font-size: 3.56rem;
+    margin-bottom: 10px;
+    line-height: 1.2em;
+    font-weight: 700;    
+    opacity: 0;
+    animation: slide_right 0.5s linear forwards;
+    animation-delay: 1.5s; 
+    /* quanto maior a numeração, mais lento vai ser a animação */
+}
+
+
+@keyframes slide_right{
+
+    
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.content .textBox p{
+
+    font-size: 1.2em;
+    color: #333;
+    opacity: 0;
+    animation: slide_left 0.5s linear forwards;
+    animation-delay: 1.75s; 
+    /* quanto maior a numeração, mais lento vai ser a animação */
+}
+
+
+.content .textBox a {
+
+    display: inline-block;
+    margin: 20px;
+    margin-left: -3px;
+    padding: 15px 30px;
+    background-color:#ff5e8e;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    opacity: 0;
+    animation: slide_top 0.5s linear forwards;
+    animation-delay: 2s; 
+}
+
+.sci{
+
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sci li{
+
+    list-style: none;
+}
+
+.sci li a{
+
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+    width: 44px;
+    height: 44px;
+    background-color: #0169b2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+    animation: slide_left 0.5s linear forwards;
+    animation-delay: calc(0.2s * var(--i)); 
+}
+
+.sci li a img{
+
+    filter: invert(1);
+    transform: scale(0.5);
+}
+
+.sci li a:hover{
+
+    background-color: #ff5e8e;
+    transform: translateY(-10px);
+}
+
+.mosque{
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 613px;
+    opacity: 0;
+    animation: fade_in 1s linear forwards;
+    animation-delay: 3.5s;
+}
+
+@keyframes fade_in{
+
+    0%{
+
+        opacity: 0;
+    }
+    100%{
+
+        opacity: 1;
+    }
+}
+
+/* Agora, fazer o site ficar "responsivo" */
+
+@media (max-width: 991px){
+
+    section{
+        padding: 150px 20px;
+    }
+
+    header{
+
+        padding: 20px;
+        margin-left: 4px
+    }
+
+    .navigation{
+
+        display: none;
+    }
+
+    .navigation.active{
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    header ul li {
+
+        margin: 10px 0;
+    }
+
+    header ul li a{
+
+        margin-left: 0;
+    }
+
+    .toggle{
+        
+        position: fixed;
+        top: 20px;
+        right: 35px;
+        width: 37px;
+        height: 36px;
+        background: #0169b2 url("../img/topo/menu.png");
+        background-size: 21px;
+        background-repeat: no-repeat;
+        background-position: center ;
+        cursor: pointer;
+        z-index: 1000;
+        border-radius: 2px;
+    }
+
+    .toggle.active{
+
+        background: #0169b2 url("../img/topo/close.png");
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center ;
+        z-index: 10000;
+    }
+
+
+    .content .textBox{
+
+        font-size: 15px;
+       
+    }
+
+    .content .textBox h2{
+
+        margin-top: -65px;
+    }
+
+    .mosque{
+
+        opacity: 0.6;
+        max-width: 551px;
+    }
+
+}
+
+@media (max-width: 600px){
+
+    .mosque{
+
+        opacity: 0.4;    
+        top: 226px;
+        max-width: 514px;   
+    }
+
+    .content .textBox {
+
+        font-size: 14px;
+        margin-top: 74px;
+
+    }    
+
+    .content .textBox h2{
+
+        font-size: 2.5rem;
+    }
+
+    .content .textBox p{
+
+        font-size: 18px;
+    }
+
+    .content{
+        margin-top: 98px;
+    }
+
+}
+
+
+
+/* Now, serão as animações do header */
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Ramadan Kareem | Animated Websites Designs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+
+</head>
+
+<body>
+    <section>
+
+        <img src="img/topo/mosque.jpg" class="mosque">
+
+        <header>
+            <a href="#" class="logo">Ramadan</a>
+            
+            <div class="toggle"></div>
+            <!-- Para realizar o "surgir" dos menus, a div que vai receber o conteudo tem que estar "proximo" ao que ela vai 
+            receber dentro dela, por exemplo: a div 'toggle' que vai receber o conteudo da
+            'navigation', ambas precisam estar "proximas" , ou seja, dentro do header ou dentro da mesma div
+            caso contrario, ele não consegue buscar fora e da um 'erro', limitando as ações dela conforme o tamanho do site -->
+            
+            <ul class="navigation">
+                <li><a href="#" style="--i:1;" class="active">Home</a></li>
+                <li><a href="#" style="--i:2;">About</a></li>
+                <li><a href="#" style="--i:3;">Calendar</a></li>
+                <li><a href="#" style="--i:4;">Blog</a></li>
+                <li><a href="#" style="--i:5;">Contact</a></li>
+            </ul>
+        </header>
+
+        <div class="content">
+            <div class="textBox">
+                <h2>Happy Ramadan Kareem</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing alit. Quasi deleniti non sunt voluptatum,
+                    temporibus,
+                    officcis atque sit dignissimos earum voluptas corrupit quis illo. Sed aliquam nemo corporis fugit,
+                    deleniti
+                    consequuntur.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+
+        <ul class="sci">
+            <li><a href="#" style="--i:11;"><img src="img/topo/facebook.png"></a></li>
+            <li><a href="#" style="--i:12;"><img src="img/topo/twitter.png"></a></li>
+            <li><a href="#" style="--i:13;"><img src="img/topo/instagram.png"></a></li>
+        </ul>
+
+    </section>
+
+    <script>
+
+        const menuToggle = document.querySelector('.toggle');
+        const navigation = document.querySelector('.navigation');
+        menuToggle.onclick = function(){
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+
+    </script>
+
+
+</body>
+
+</html>
